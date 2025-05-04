@@ -2,25 +2,31 @@
 
 Projeto simples de **jogo da forca** desenvolvido em Python durante o curso da **Data Science Academy**. O jogo é executado via terminal e permite ao jogador interagir com uma lista dinâmica de palavras.
 
----
-
-### **⚒️ Tecnologias utilizadas**
+## **⚒️ Tecnologias utilizadas**
 
 * Python (3.12.3)
   - **random**
   - **os**
 
-
----
-
-### 🎮 Funcionalidades
+## 🎮 Funcionalidades
 
 * Jogar tentando adivinhar uma palavra sorteada aleatoriamente.
 * Adicionar novas palavras.
 * Visualizar todas as palavras disponíveis.
 * Interface via terminal com feedback interativo.
 
----
+## 📸 Capturas de Tela
+### 🟣 Menu inicial
+<img src='imgs/menu_inicial.png'>
+
+### 🟣 Menu de adicionar palavras
+<img src='imgs/menu_adicionando.png'>
+
+### 🟣 Menu de ver palavras
+<img src='imgs/menu_palavras.png'>
+
+### 🟣 Menu dentro do jogo
+<img src='imgs/in_game.png'>
 
 ## 🚀 Como Executar o Projeto
 
