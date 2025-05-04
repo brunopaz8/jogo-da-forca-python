@@ -57,7 +57,7 @@ voçê tem: {chances} tentativas
 def adicionar_palavra(palavras):
     while True:
         nova_palavra = input("""
-======Adicionando======
+========Adicionando========
 *digite 'q' se quiser sair
 
 Palavra: """)
@@ -77,9 +77,9 @@ Palavra: """)
         
 def exibindo_palavras(palavras):
     opcao = input(f"""
-========Palavras========
+========Palavras=========
 {"\n".join(palavras)}
-========================
+=========================
 Digite 'q' se quiser sair 
 """).lower()
     if opcao == "q":
@@ -92,11 +92,11 @@ Digite 'q' se quiser sair
 
 while True:
     escolha = input("""
-========Menu========
+============Menu============
 [a] Jogar
 [s] Adicionar novas palavras
 [d] Ver palavras existentes
-====================
+============================
 Sua escolha: """)
     
     if escolha.lower() == "a":
