@@ -18,9 +18,12 @@ def jogo(palavras):
     letras_erradas = []
     
     while chances > 0:
+        img = display_hangman(chances)
         tentativa = input(f"""
 XXXXXXXXX Acerte a palavra XXXXXXXXX
                              
+        {img}
+                          
 {"".join(letras_certas)}    
                                                
 Letras erradas: {", ".join(letras_erradas)}
@@ -53,6 +56,75 @@ voçê tem: {chances} tentativas
             break
     if chances == 0:
         print(f"voçê perdeu!, a palavra era: {palavra}")
+
+def display_hangman(chances):
+    imgs = [
+        """
+         ________
+         |      |
+         |
+         |
+         |
+         |
+         -
+        """,
+        """
+         ________
+         |      |
+         |      O 
+         |
+         |
+         |
+         -
+        """,
+        """
+         ________
+         |      |
+         |      O 
+         |      |
+         |      |
+         |
+         -
+        """,
+        """
+         ________
+         |      |
+         |      O 
+         |     \\|
+         |      |
+         |
+         -
+        """,
+        """
+         ________
+         |      |
+         |      O 
+         |     \\|/
+         |      |
+         |
+         -
+        """,
+        """
+         ________
+         |      |
+         |      O 
+         |     \\|/
+         |      |
+         |     /
+         -
+        """,
+        """
+         ________
+         |      |
+         |      O 
+         |     \\|/
+         |      |
+         |     / \\
+         -
+        """
+    ]
+    imgs.reverse()
+    return imgs[chances]
 
 def adicionar_palavra(palavras):
     while True:

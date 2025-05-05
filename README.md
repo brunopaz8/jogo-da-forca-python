@@ -26,7 +26,10 @@ Projeto simples de **jogo da forca** desenvolvido em Python durante o curso da *
 <img src='imgs/menu_palavras.png'>
 
 ### 🟣 Menu dentro do jogo
-<img src='imgs/in_game.png'>
+<img src='imgs/ingame.png'>
+
+### 🟣 Menu dentro do jogo (perdendo)
+<img src='imgs/ingame_losing.png'>
 
 ## 🚀 Como Executar o Projeto
 
