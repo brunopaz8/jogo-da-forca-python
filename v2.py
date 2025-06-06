@@ -13,8 +13,14 @@ def jogo(palavras):
     
     palavra = random.choice(palavras)
     chances = 6
-        
-    letras_certas = ['_' for letra in palavra]
+    letras_certas = []  
+    
+    for letra in palavra:
+        if letra == " ":
+            letras_certas.append(letra)
+        else:
+            letras_certas.append("_")
+    
     letras_erradas = []
     
     while chances > 0:
@@ -31,7 +37,7 @@ Letras erradas: {", ".join(letras_erradas)}
 voçê tem: {chances} tentativas
 """).lower()
         
-        if tentativa in palavra and tentativa not in letras_certas:
+        if (tentativa in palavra) and (tentativa not in letras_certas) and (len(tentativa) == 1 and tentativa.isalpha()):
             limpar_tela()
             for i, letra in enumerate(palavra):
                 if tentativa == letra:
@@ -44,7 +50,11 @@ voçê tem: {chances} tentativas
         elif tentativa in letras_erradas:
             limpar_tela()
             print('\nVoçê já digitou essa letra!')
-        
+
+        elif len(tentativa) > 1 or not tentativa.isalpha():
+            limpar_tela()
+            print('\nVoçê so pode digitar uma letra!')
+
         else:
             limpar_tela()
             letras_erradas.append(tentativa)
@@ -54,6 +64,7 @@ voçê tem: {chances} tentativas
             limpar_tela()
             print(f'\nVoçê venceu!, a palavra era {palavra}')
             break
+
     if chances == 0:
         print(f"voçê perdeu!, a palavra era: {palavra}")
 
@@ -129,9 +140,9 @@ def display_hangman(chances):
 def adicionar_palavra(palavras):
     while True:
         nova_palavra = input("""
-========Adicionando========
+======== Adicionando ========
 *digite 'q' se quiser sair
-
+=============================
 Palavra: """)
         if nova_palavra.lower() == "q":
             limpar_tela()
@@ -149,9 +160,9 @@ Palavra: """)
         
 def exibindo_palavras(palavras):
     opcao = input(f"""
-========Palavras=========
+======== Palavras =========
 {"\n".join(palavras)}
-=========================
+===========================
 Digite 'q' se quiser sair 
 """).lower()
     if opcao == "q":
@@ -161,14 +172,14 @@ Digite 'q' se quiser sair
         limpar_tela()
         print("Opção Inválida!")       
   
-
 while True:
     escolha = input("""
-============Menu============
-[a] Jogar
-[s] Adicionar novas palavras
-[d] Ver palavras existentes
-============================
+============ MENU ============
+[A] - Jogar
+[S] - Adicionar novas palavras
+[D] - Ver palavras existentes
+[Q] - Finalizar progama
+==============================
 Sua escolha: """)
     
     if escolha.lower() == "a":
@@ -184,5 +195,10 @@ Sua escolha: """)
         limpar_tela()
         exibindo_palavras(palavras)
     
+    elif escolha.lower() == "q":
+        limpar_tela()
+        print("Progama finalizando...")
+        break
     else:
+        limpar_tela()
         print("Opção Inválida!")
