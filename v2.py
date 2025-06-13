@@ -146,7 +146,11 @@ def verifica_palavra(palavra, palavras):
     
     elif tem_numero == True:
         limpar_tela()
+<<<<<<< HEAD
         print("A palavra não pode conter números !")
+=======
+        print("A palavra não pode conter numeros !")
+>>>>>>> ba503f1 (Adição de dicas e melhoras nas funções)
         return False
     
     elif palavra_existe == True:
@@ -195,7 +199,11 @@ Dica: """)
             
                 if verifica_dica(dica= nova_palavra_dica):
                     limpar_tela()         
+<<<<<<< HEAD
                     palavra = {"palavra":nova_palavra.lower(), "dica":nova_palavra_dica}
+=======
+                    palavra = {"palavra":nova_palavra, "dica":nova_palavra_dica}
+>>>>>>> ba503f1 (Adição de dicas e melhoras nas funções)
                     palavras.append(palavra)
                     print(f'{nova_palavra} adicionada!')
                     break
