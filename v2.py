@@ -34,7 +34,7 @@ Dica: {palavra["dica"]}
                                                
 Letras erradas: {", ".join(letras_erradas)}
 
-voçê tem: {chances} tentativas
+você tem: {chances} tentativas
 """).lower()
         
         if (tentativa in palavra["palavra"]) and (tentativa not in letras_certas) and (len(tentativa) == 1 and tentativa.isalpha()):
@@ -146,7 +146,7 @@ def verifica_palavra(palavra, palavras):
     
     elif tem_numero == True:
         limpar_tela()
-        print("A palavra não pode conter numeros !")
+        print("A palavra não pode conter números !")
         return False
     
     elif palavra_existe == True:
@@ -195,7 +195,7 @@ Dica: """)
             
                 if verifica_dica(dica= nova_palavra_dica):
                     limpar_tela()         
-                    palavra = {"palavra":nova_palavra, "dica":nova_palavra_dica}
+                    palavra = {"palavra":nova_palavra.lower(), "dica":nova_palavra_dica}
                     palavras.append(palavra)
                     print(f'{nova_palavra} adicionada!')
                     break
