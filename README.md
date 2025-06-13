@@ -50,4 +50,6 @@ python jogo_da_forca.py
 
 ---
 
+*TODO*: atualizar as imagens do readme
+
 

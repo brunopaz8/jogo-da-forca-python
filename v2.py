@@ -1,7 +1,7 @@
 import random
 from os import system, name
 
-palavras = ["python", "java", "sql", "springboot", "docker"]  
+palavras = [{"palavra":"python", "dica" : "linguagem de programação da cobra"}] 
 
 def limpar_tela():
     if name == 'nt':
@@ -11,23 +11,23 @@ def limpar_tela():
 
 def jogo(palavras):
     
-    palavra = random.choice(palavras)
+    palavra = palavras[random.randrange(0,len(palavras))]
     chances = 6
     letras_certas = []  
-    
-    for letra in palavra:
+    letras_erradas = []
+
+    for letra in palavra["palavra"]:
         if letra == " ":
             letras_certas.append(letra)
         else:
             letras_certas.append("_")
     
-    letras_erradas = []
-    
     while chances > 0:
         img = display_hangman(chances)
         tentativa = input(f"""
 XXXXXXXXX Acerte a palavra XXXXXXXXX
-                             
+                          
+Dica: {palavra["dica"]}                
         {img}
                           
 {"".join(letras_certas)}    
@@ -37,23 +37,19 @@ Letras erradas: {", ".join(letras_erradas)}
 voçê tem: {chances} tentativas
 """).lower()
         
-        if (tentativa in palavra) and (tentativa not in letras_certas) and (len(tentativa) == 1 and tentativa.isalpha()):
+        if (tentativa in palavra["palavra"]) and (tentativa not in letras_certas) and (len(tentativa) == 1 and tentativa.isalpha()):
             limpar_tela()
-            for i, letra in enumerate(palavra):
+            for i, letra in enumerate(palavra["palavra"]):
                 if tentativa == letra:
                     letras_certas[i] = letra
         
-        elif tentativa in letras_certas:
+        elif tentativa in letras_certas or tentativa in letras_erradas:
             limpar_tela()
-            print('\nVoçê já digitou essa letra!')
-
-        elif tentativa in letras_erradas:
-            limpar_tela()
-            print('\nVoçê já digitou essa letra!')
+            print('\nVocê já digitou essa letra!')
 
         elif len(tentativa) > 1 or not tentativa.isalpha():
             limpar_tela()
-            print('\nVoçê so pode digitar uma letra!')
+            print('\nVocê só pode digitar uma letra!')
 
         else:
             limpar_tela()
@@ -62,11 +58,11 @@ voçê tem: {chances} tentativas
         
         if "_" not in letras_certas:
             limpar_tela()
-            print(f'\nVoçê venceu!, a palavra era {palavra}')
+            print(f'\nVocê venceu!, a palavra era {palavra["palavra"]}')
             break
 
     if chances == 0:
-        print(f"voçê perdeu!, a palavra era: {palavra}")
+        print(f"você perdeu!, a palavra era: {palavra["palavra"]}")
 
 def display_hangman(chances):
     imgs = [
@@ -137,6 +133,45 @@ def display_hangman(chances):
     imgs.reverse()
     return imgs[chances]
 
+def verifica_palavra(palavra, palavras):
+    
+    tem_numero = any(char.isdigit() for char in palavra)
+
+    palavra_existe = any(item['palavra'] == palavra for item in palavras)
+
+    if palavra.strip() == "":
+        limpar_tela()
+        print("Digite algo primeiro!")
+        return False
+    
+    elif tem_numero == True:
+        limpar_tela()
+        print("A palavra não pode conter numeros !")
+        return False
+    
+    elif palavra_existe == True:
+        limpar_tela()
+        print(f"A palavra {palavra} já existe !")
+        return False
+
+    else:
+        return True
+
+def verifica_dica(dica):
+    
+    if dica.strip() == "":
+        limpar_tela()
+        print("A dica não pode estar vazia!")
+        return False
+    
+    elif dica.isdigit() == True:
+        limpar_tela()
+        print("A dica não pode ser só números !")
+        return False
+    
+    else:
+        return True
+
 def adicionar_palavra(palavras):
     while True:
         nova_palavra = input("""
@@ -144,24 +179,36 @@ def adicionar_palavra(palavras):
 *digite 'q' se quiser sair
 =============================
 Palavra: """)
+        
         if nova_palavra.lower() == "q":
             limpar_tela()
             return palavras
         
-        elif nova_palavra not in palavras and nova_palavra != "":
-            palavras.append(nova_palavra)
+        elif verifica_palavra(palavra= nova_palavra, palavras= palavras):
             limpar_tela()
-            print(f'{nova_palavra} adicionada!')
+            while True:
+                nova_palavra_dica = input("""
+======== Adicionando ========
+Agora digite uma dica !
+=============================
+Dica: """)
             
-        
-        elif nova_palavra == "":
-            limpar_tela()
-            print("Digite algo primeiro!")
-        
+                if verifica_dica(dica= nova_palavra_dica):
+                    limpar_tela()         
+                    palavra = {"palavra":nova_palavra, "dica":nova_palavra_dica}
+                    palavras.append(palavra)
+                    print(f'{nova_palavra} adicionada!')
+                    break
+               
 def exibindo_palavras(palavras):
+    lista_palavras = []
+
+    for indice, item in enumerate(palavras, start=1):
+        lista_palavras.append(f"{indice} - {item['palavra']}")
+    
     opcao = input(f"""
 ======== Palavras =========
-{"\n".join(palavras)}
+{"\n".join(lista_palavras)}
 ===========================
 Digite 'q' se quiser sair 
 """).lower()
@@ -171,14 +218,14 @@ Digite 'q' se quiser sair
     else:
         limpar_tela()
         print("Opção Inválida!")       
-  
+
 while True:
     escolha = input("""
 ============ MENU ============
 [A] - Jogar
 [S] - Adicionar novas palavras
 [D] - Ver palavras existentes
-[Q] - Finalizar progama
+[Q] - Finalizar programa
 ==============================
 Sua escolha: """)
     
@@ -197,7 +244,7 @@ Sua escolha: """)
     
     elif escolha.lower() == "q":
         limpar_tela()
-        print("Progama finalizando...")
+        print("Programa finalizando...")
         break
     else:
         limpar_tela()
