@@ -36,14 +36,14 @@ Projeto simples de **jogo da forca** desenvolvido em Python durante o curso da *
 1️⃣ **Clone o repositório:**
 
 ```bash
-git clone https://github.com/brunopaz8/Jogo_da_forca
+git clone https://github.com/brunopaz8/jogo-da-forca-python.git
 
 ```
 
 2️⃣ **Navegue até o diretório do projeto:**
 
 ```bash
-cd cd jogo_da_forca
+cd cd jogo-da-forca-python
 ```
 
 3️⃣ **Execute o script no terminal:**
