@@ -136,7 +136,7 @@ def display_hangman(chances):
 def verifica_palavra(palavra, palavras):
     
     tem_numero = any(char.isdigit() for char in palavra)
-
+    tem_caracteres = all(char.isalpha() for char in palavra)
     palavra_existe = any(item['palavra'] == palavra for item in palavras)
 
     if palavra.strip() == "":
@@ -148,6 +148,10 @@ def verifica_palavra(palavra, palavras):
         limpar_tela()
         print("A palavra não pode conter números !")
         return False
+    
+    elif tem_caracteres == False:
+        limpar_tela()
+        print("A palavra não pode conter caracteres !")
     
     elif palavra_existe == True:
         limpar_tela()
@@ -176,14 +180,19 @@ def adicionar_palavra(palavras):
     while True:
         nova_palavra = input("""
 ======== Adicionando ========
-*digite 'q' se quiser sair
+[D] - Ver lista de palavras
+[Q] - Voltar para o menu
 =============================
-Palavra: """)
+Digite a palavra nova: """)
         
         if nova_palavra.lower() == "q":
             limpar_tela()
             return palavras
         
+        elif nova_palavra.lower() == "d":
+            limpar_tela()
+            exibindo_palavras(palavras= palavras)
+
         elif verifica_palavra(palavra= nova_palavra, palavras= palavras):
             limpar_tela()
             while True:
@@ -204,13 +213,16 @@ def exibindo_palavras(palavras):
     lista_palavras = []
 
     for indice, item in enumerate(palavras, start=1):
+        lista_palavras.append(f"-------------------------")
         lista_palavras.append(f"{indice} - {item['palavra']}")
+        lista_palavras.append(f"Dica: {item['dica']}")
+        lista_palavras.append(f"-------------------------")
     
     opcao = input(f"""
 ======== Palavras =========
 {"\n".join(lista_palavras)}
 ===========================
-Digite 'q' se quiser sair 
+Digite 'Q' para voltar
 """).lower()
     if opcao == "q":
         limpar_tela()

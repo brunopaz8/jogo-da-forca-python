@@ -17,30 +17,36 @@ Projeto simples de **jogo da forca** desenvolvido em Python durante o curso da *
 
 ## 📸 Capturas de Tela
 ### 🟣 Menu inicial
-<img src='imgs/menu_inicial.png'>
+<img src='imgs/menu_principal.png'>
 
 ### 🟣 Menu de adicionar palavras
-<img src='imgs/menu_adicionando.png'>
+<img src='imgs/menu_adicionando_palavra.png'>
 
 ### 🟣 Menu de ver palavras
-<img src='imgs/menu_palavras.png'>
+<img src='imgs/menu_ver_palavras.png'>
 
 ### 🟣 Menu dentro do jogo
-<img src='imgs/ingame.png'>
+<img src='imgs/menu_jogo.png'>
 
 ### 🟣 Menu dentro do jogo (perdendo)
-<img src='imgs/ingame_losing.png'>
+<img src='imgs/menu_jogo_perdendo.png'>
 
 ## 🚀 Como Executar o Projeto
 
-1️⃣ Clone o repositório:
+1️⃣ **Clone o repositório:**
 
 ```bash
 git clone https://github.com/brunopaz8/Jogo_da_forca
-cd jogo_da_forca
+
 ```
 
-2️⃣ Execute o script no terminal:
+2️⃣ **Navegue até o diretório do projeto:**
+
+```bash
+cd cd jogo_da_forca
+```
+
+3️⃣ **Execute o script no terminal:**
 
 ```bash
 python jogo_da_forca.py
@@ -50,6 +56,5 @@ python jogo_da_forca.py
 
 ---
 
-*TODO*: atualizar as imagens do readme
 
 
