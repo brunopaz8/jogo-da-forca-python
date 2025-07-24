@@ -2,11 +2,16 @@
 
 Projeto simples de **jogo da forca** desenvolvido em Python durante o curso da **Data Science Academy**. O jogo é executado via terminal e permite ao jogador interagir com uma lista dinâmica de palavras.
 
+---
+
 ## **⚒️ Tecnologias utilizadas**
 
 * Python (3.12.3)
   - **random**
   - **os**
+* Git/GitHub
+
+---
 
 ## 🎮 Funcionalidades
 
@@ -14,6 +19,25 @@ Projeto simples de **jogo da forca** desenvolvido em Python durante o curso da *
 * Adicionar novas palavras.
 * Visualizar todas as palavras disponíveis.
 * Interface via terminal com feedback interativo.
+
+---
+
+## 📂 Estrutura de Pastas
+
+```
+jogo-da-forca-python/
+├── imgs/
+│   ├── menu_adicionando_palavra.png
+│   ├── menu_jogo.png
+│   ├── menu_jogo_perdendo.png
+│   ├── menu_principal.png
+│   └── menu_ver_palavras.png
+├── .gitignore
+├── jogo-da-forca.py
+└── README.md
+```
+
+---
 
 ## 📸 Capturas de Tela
 ### 🟣 Menu inicial
@@ -31,7 +55,9 @@ Projeto simples de **jogo da forca** desenvolvido em Python durante o curso da *
 ### 🟣 Menu dentro do jogo (perdendo)
 <img src='imgs/menu_jogo_perdendo.png'>
 
-## 🚀 Como Executar o Projeto
+---
+
+## 🚀 Como Executar o Projeto:
 
 1️⃣ **Clone o repositório:**
 
@@ -43,16 +69,16 @@ git clone https://github.com/brunopaz8/jogo-da-forca-python.git
 2️⃣ **Navegue até o diretório do projeto:**
 
 ```bash
-cd cd jogo-da-forca-python
+cd jogo-da-forca-python
 ```
 
 3️⃣ **Execute o script no terminal:**
 
 ```bash
-python jogo_da_forca.py
+python jogo-da-forca.py
 ```
 
-> Certifique-se de ter o Python 3 instalado e configurado no seu sistema.
+> Certifique-se de ter o [Python 3](https://www.python.org/downloads/) instalado e configurado no seu sistema.
 
 ---
 
