@@ -32,6 +32,8 @@ jogo-da-forca-python/
 │   ├── menu_jogo_perdendo.png
 │   ├── menu_principal.png
 │   └── menu_ver_palavras.png
+├── arquivos/
+│   └── palavra
 ├── .gitignore
 ├── jogo-da-forca.py
 └── README.md
