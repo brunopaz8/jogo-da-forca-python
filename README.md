@@ -8,6 +8,7 @@ Projeto simples de **jogo da forca** desenvolvido em Python durante o curso da *
 
 * Python (3.12.3)
   - **random**
+  - **json** 
   - **os**
 * Git/GitHub
 
@@ -15,10 +16,12 @@ Projeto simples de **jogo da forca** desenvolvido em Python durante o curso da *
 
 ## 🎮 Funcionalidades
 
-* Jogar tentando adivinhar uma palavra sorteada aleatoriamente.
-* Adicionar novas palavras.
-* Visualizar todas as palavras disponíveis.
-* Interface via terminal com feedback interativo.
+- **Jogar** tentando adivinhar uma palavra sorteada aleatoriamente.
+- **Adicionar** novas palavras.
+- **Remover** palavra.
+- **Visualizar** todas as palavras disponíveis.
+- **Salvar** as palavras localmente.
+- Interface via terminal com feedback interativo.
 
 ---
 
@@ -43,19 +46,22 @@ jogo-da-forca-python/
 
 ## 📸 Capturas de Tela
 ### 🟣 Menu inicial
-<img src='imgs/menu_principal.png'>
+<img src='imgs/menu_inicial.png'>
 
 ### 🟣 Menu de adicionar palavras
 <img src='imgs/menu_adicionando_palavra.png'>
 
 ### 🟣 Menu de ver palavras
-<img src='imgs/menu_ver_palavras.png'>
+<img src='imgs/menu_exibindo_palavras.png'>
 
 ### 🟣 Menu dentro do jogo
 <img src='imgs/menu_jogo.png'>
 
 ### 🟣 Menu dentro do jogo (perdendo)
 <img src='imgs/menu_jogo_perdendo.png'>
+
+### 🟣 Menu de salvamento 
+<img src='imgs/menu_salvando.png'>
 
 ---
 

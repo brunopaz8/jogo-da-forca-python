@@ -246,7 +246,7 @@ def remover_palavra(palavras):
             lista_palavras.append(f"-------------------------")
 
         palavra_escolhida = input(f"""
-======== Retirando Palavra ========
+========= Retirando Palavra =========
 {"\n".join(lista_palavras)}
 =====================================
 [5] - Voltar para o menu
@@ -292,7 +292,7 @@ Sua escolha """).lower()
 def salvar_palavra(palavras):
     while True:
         escolha = input("""
-============ Salvando ========
+========== Salvando ==========
 [1] - Salvar alterações
 [2] - Não salvar alterações
 ==============================
